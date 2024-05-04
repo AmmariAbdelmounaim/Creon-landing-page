@@ -1,9 +1,14 @@
+import Link from "next/link"
+
+import HeroSection from "@/components/Hero"
+import NavbarHorizontal from "@/components/Navbar/Horizontal"
+import CreonPassSection from "@/components/CreonPass"
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="font-satoshi  text-3xl text-purple-secondary">
-        Hello world
-      </h1>
+    <main className="relative min-h-screen">
+      <NavbarHorizontal />
+      <HeroSection />
+      <CreonPassSection />
     </main>
-  );
+  )
 }

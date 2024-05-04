@@ -1,10 +1,11 @@
-import type { Config } from "tailwindcss";
+const plugin = require("tailwindcss/plugin")
 
-const config: Config = {
+const config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/stories/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -13,12 +14,21 @@ const config: Config = {
           DEFAULT: "#AB23FF",
           secondary: "#9123FF",
         },
-        blue: "#3D8BFF",
+        blue: {
+          DEFAULT: "#3D8BFF",
+          44: "rgba(61, 139, 255, 0.44)",
+        },
         grey: {
           line: "#13171D",
         },
       },
       fontSize: {
+        xs: [
+          "0.625rem",
+          {
+            lineHeight: "0.6875rem",
+          },
+        ],
         sm: [
           "1.125rem",
           {
@@ -46,10 +56,23 @@ const config: Config = {
       },
       fontFamily: {
         satoshi: ["var(--font-satoshi)"],
-        monument_extended: ["var(--font-monument-extended)"],
+        monumentextended: ["var(--font-monument-extended)"],
+      },
+      spacing: {
+        "100vh": "100vh",
+        "200vh": "200vh",
+        "300vh": "300vh",
       },
     },
   },
-  plugins: [],
-};
-export default config;
+  plugins: [
+    plugin(function ({ matchUtilities }) {
+      matchUtilities({
+        "bg-gradient": (angle) => ({
+          "background-image": `linear-gradient(${angle}, var(--tw-gradient-stops))`,
+        }),
+      })
+    }),
+  ],
+}
+export default config
