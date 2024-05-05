@@ -3,20 +3,22 @@ import localFont from "next/font/local"
 
 import "@/styles/globals.css"
 
+import { cn } from "@/lib/utils"
+
 // Local-Fonts
 const monument_extended = localFont({
-  src: "../styles/fonts/monument-extended/PPMonumentExtended-Regular.otf",
+  src: "../styles/fonts/monument-extended/MonumentExtended-Regular.woff2",
   variable: "--font-monument-extended",
 })
 const satoshi = localFont({
   src: [
     {
-      path: "../styles/fonts/satoshi/Satoshi-Regular.otf",
+      path: "../styles/fonts/satoshi/Satoshi-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../styles/fonts/satoshi/Satoshi-Bold.otf",
+      path: "../styles/fonts/satoshi/Satoshi-Bold.woff2",
       weight: "700",
       style: "normal",
     },
@@ -37,9 +39,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${satoshi.variable} ${monument_extended.variable}`}
+      className={cn(
+        `scrollbar-thumb-purple scrollbar-thin scrollbar-track-black min-h-screen  bg-black ${satoshi.variable} ${monument_extended.variable}`
+      )}
     >
-      <body className="bg-black">{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
