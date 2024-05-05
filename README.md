@@ -1,4 +1,4 @@
-# Niftabl Front End Challenge - Figma to Next.js 
+# Niftable Front End Challenge - Figma to Next.js 
 
 This repository contains a Next.js application developed for the Niftabl Challenge. The challenge is to transform a specific Figma design into a pixel-perfect, fully functional web page. This project demonstrates precise design implementation skills along with modern web development practices.
 
@@ -23,7 +23,7 @@ Before you begin, ensure you have the following installed:
 To get started with this project, clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/your-username/niftabl-challenge.git
+git clone https://github.com/AmmariAbdelmounaim/niftables-challenge.git
 cd niftabl-challenge
 npm install # or yarn install
 ```
