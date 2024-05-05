@@ -1,6 +1,6 @@
-import DiscordLogo from "@/assets/discord.svg"
-import TelegramLogo from "@/assets/telegram.svg"
-import TwitterLogo from "@/assets/twitter.svg"
+import DiscordLogo from "@/assets/Discord.svg"
+import TelegramLogo from "@/assets/Telegram.svg"
+import TwitterLogo from "@/assets/Twitter.svg"
 
 import { LogoProps } from "@/components/Footer/Logo"
 
