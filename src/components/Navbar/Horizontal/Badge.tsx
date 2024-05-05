@@ -1,15 +1,15 @@
-import { cn } from "@/lib/utils"
+import { HTMLAttributes } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
+import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full  px-1 py-0.5 text-xs uppercase font-bold ",
+  "flex items-center rounded-full px-2 text-xs uppercase font-bold ",
   {
     variants: {
       variant: {
-        link: "align-top bg-black text-purple ",
-        card:
-          "bg-white text-black",
+        link: " -translate-y-1/4 leading-[0rem] bg-black text-purple ",
+        card: "bg-white text-black py-0.5 absolute right-[1.88rem] top-0 translate-y-[-50%]",
       },
     },
     defaultVariants: {
@@ -19,13 +19,15 @@ const badgeVariants = cva(
 )
 
 export interface BadgeProps
-  extends 
+  extends HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof badgeVariants> {}
 
-function Badge({ variant }: BadgeProps) {
-  return <div className={cn(badgeVariants({ variant }))}  >
-    {variant === "card" ? "coming soon":"soon"}
-  </div>
+function Badge({ className, variant, ...props }: BadgeProps) {
+  return (
+    <div className={cn(badgeVariants({ variant }), className)} {...props}>
+      {variant === "card" ? "coming soon" : "soon"}
+    </div>
+  )
 }
 
 export { Badge, badgeVariants }
