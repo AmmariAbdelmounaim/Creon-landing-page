@@ -1,6 +1,7 @@
 const plugin = require("tailwindcss/plugin")
 
 const config = {
+  mode: "jit",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -62,10 +63,13 @@ const config = {
         "100vh": "100vh",
         "200vh": "200vh",
         "300vh": "300vh",
+        "400vh": "400vh",
+        "500vh": "500vh",
       },
     },
   },
   plugins: [
+    require("tailwind-scrollbar"),
     plugin(function ({ matchUtilities }) {
       matchUtilities({
         "bg-gradient": (angle) => ({
