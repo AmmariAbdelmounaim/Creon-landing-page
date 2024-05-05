@@ -45,10 +45,10 @@ export default function NavbarVertical({
       {navItems.map((item, index) => {
         const { text, withBadge } = item
         return (
-          <>
-            <NavItem key={index} text={text} withBadge={withBadge} />
+          <div key={index}>
+            <NavItem text={text} withBadge={withBadge} />
             <div className="my-[1rem] h-[1px] w-full bg-grey-line" />
-          </>
+          </div>
         )
       })}
       {/* socials */}

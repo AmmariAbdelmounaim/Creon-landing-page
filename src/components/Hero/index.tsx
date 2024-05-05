@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { CldVideoPlayer } from "next-cloudinary"
 
 import { cn } from "@/lib/utils"
 
@@ -25,7 +26,8 @@ export default function HeroSection() {
         <div className="relative h-full w-full">
           {/* Gradient */}
           <div className="from-4% via-47% absolute left-0 top-0 z-40 h-full w-full from-purple via-blue to-black to-80% mix-blend-soft-light bg-gradient-[175deg]" />
-          {/* Text */}
+          {/* Video */}
+
           <video
             className="absolute z-30 h-full w-full object-cover"
             muted
@@ -36,7 +38,7 @@ export default function HeroSection() {
             <source src="/videos/main-background-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          {/* Video */}
+          {/* Text */}
           <div className=" absolute top-[34.69rem] z-40  gap-10 px-60">
             <h1 className="mb-10 w-full font-monumentextended text-xl uppercase text-white">
               The world&apos;s first platform for Tokenizing AI blockchain
