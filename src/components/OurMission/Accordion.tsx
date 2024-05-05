@@ -64,7 +64,7 @@ export default function Accordion({ icon, title, text }: AccordionProps) {
         </div>
         {/* title + chevron */}
         <div className=" flex items-center gap-[1.25rem]">
-          <h3 className="w-[22.875rem] cursor-pointer text-md text-white transition-colors duration-300 group-hover:text-blue">
+          <h3 className="w-[22.875rem] cursor-pointer text-md font-medium text-white transition-colors duration-300 group-hover:text-blue">
             {title}
           </h3>
           <ChevronDown

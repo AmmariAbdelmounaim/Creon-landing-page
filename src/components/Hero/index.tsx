@@ -24,7 +24,7 @@ export default function HeroSection() {
       >
         <div className="relative h-full w-full">
           {/* Gradient */}
-          <div className="from-4.29% via-47.39% to-95.05% absolute left-0 top-0 z-40 h-full w-full from-purple via-blue to-black mix-blend-soft-light bg-gradient-[175deg]" />
+          <div className="from-4% via-47% absolute left-0 top-0 z-40 h-full w-full from-purple via-blue to-black to-80% mix-blend-soft-light bg-gradient-[175deg]" />
           {/* Text */}
           <video
             className="absolute z-30 h-full w-full object-cover"
