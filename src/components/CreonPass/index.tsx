@@ -3,10 +3,8 @@ import RightSection from "./RightSection"
 
 export default function CreonPassSection() {
   return (
-    <div className="absolute top-full flex h-screen items-center gap-[2.5rem] pl-60">
-      {/* Left */}
+    <div className="flex h-screen items-center gap-[2.5rem] pl-60">
       <LeftSection />
-      {/* Right */}
       <RightSection />
     </div>
   )

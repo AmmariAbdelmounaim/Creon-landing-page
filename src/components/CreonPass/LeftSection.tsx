@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function LeftSection() {
   return (
     <div className="flex w-[43.75rem]  flex-shrink-0 flex-col items-start">
-      <h1 className=" font-monumentextended text-xl uppercase text-white">
+      <h1 className="font-monumentextended text-xl uppercase text-white">
         Creon Pass NFT
       </h1>
       <div className="mb-[1.94rem] mt-[1.87rem] h-[0.0625rem] w-[43.75rem] bg-grey-line"></div>
