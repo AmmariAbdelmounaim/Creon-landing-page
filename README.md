@@ -1,4 +1,4 @@
-#[Niftables Front End Challenge - Figma to Next.js](https://niftables-challenge.vercel.app/) 
+# [Niftables Front End Challenge - Figma to Next.js](https://niftables-challenge.vercel.app/) 
 This repository contains a Next.js application developed for the Niftabl Challenge. The challenge is to transform a specific Figma design into a pixel-perfect, fully functional web page. This project demonstrates precise design implementation skills along with modern web development practices.
 
 ## Overview
