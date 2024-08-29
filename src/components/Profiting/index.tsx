@@ -1,7 +1,3 @@
-import Image from "next/image"
-
-import ProfitinImg from "../../../public/images/ProfitingImg.png"
-
 export default function ProfitingSection() {
   return (
     <div className="flex min-h-screen w-full flex-col justify-center px-60">

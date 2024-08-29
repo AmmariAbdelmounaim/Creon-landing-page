@@ -1,6 +1,5 @@
 import { lastSectionItems } from "@/constants/lastSectionItems"
 
-import Footer from "../Footer"
 import CardHorizontal from "./CardHorizontal"
 
 export default function LastSection() {

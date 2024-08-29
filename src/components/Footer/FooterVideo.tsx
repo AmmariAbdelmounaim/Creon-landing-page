@@ -1,5 +1,3 @@
-import React from "react"
-
 export default function FooterVideo() {
   return (
     <div className="absolute bottom-0 left-0 h-[60.625rem] w-full ">

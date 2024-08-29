@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { CldVideoPlayer } from "next-cloudinary"
 
 import { cn } from "@/lib/utils"
 

@@ -1,5 +1,3 @@
-"use client"
-
 import ComingSoonSection from "@/components/ComingSoon"
 import CreonPassSection from "@/components/CreonPass"
 import Footer from "@/components/Footer"
