@@ -1,4 +1,16 @@
-export default function FooterVideo() {
+import { useEffect } from "react";
+
+export default function FooterVideo({setIsLoaded}:{setIsLoaded:(v:boolean) => void}) {
+  useEffect(() => {
+    const video = document.getElementById('footerVideo');
+
+    if (video) {
+      video.onloadeddata = () => {
+        setIsLoaded(true);
+      };
+    }
+  }, [setIsLoaded]);
+
   return (
     <div className="absolute bottom-0 left-0 h-[60.625rem] w-full ">
       <div className="relative h-full w-full">
@@ -14,6 +26,7 @@ export default function FooterVideo() {
         {/* Gradient */}
         <div className="absolute left-0 top-0 z-40 bg-gradient-to-b from-purple to-blue"></div>
         <video
+        id="footerVideo"
           className=" h-full w-full object-cover"
           muted
           loop
