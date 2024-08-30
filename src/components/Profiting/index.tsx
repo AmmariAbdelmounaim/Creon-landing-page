@@ -13,7 +13,7 @@ export default function ProfitingSection() {
         <div className="w-[52rem]">
           <div className="relative w-[52rem]">
             <div className="absolute left-0 top-0 z-40 h-full w-full from-purple to-blue-44 mix-blend-soft-light bg-gradient-[175deg]"></div>
-            <video className="h-auto w-full" muted loop autoPlay preload="none">
+            <video className="h-auto w-full" muted loop autoPlay preload="auto">
               <source src="/videos/creon-logo.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>

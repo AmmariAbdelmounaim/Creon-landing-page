@@ -1,6 +1,6 @@
 export default function VideoComponent() {
   return (
-    <video className="w-full h-screen" controls preload="none">
+    <video className="w-full h-screen" controls preload="auto">
       <source src="/video/" type="video/mp4" />
       <track
         src="/path/to/captions.vtt"

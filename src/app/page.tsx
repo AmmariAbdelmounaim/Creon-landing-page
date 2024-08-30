@@ -17,7 +17,7 @@ export default function Home() {
   const [isLoaded2, setIsLoaded2] = useState<boolean>(false)
 
   const showLoading = !isLoaded0 || !isLoaded1 || !isLoaded2
-
+  
   return (
     <main className="relative">
       {showLoading ? (

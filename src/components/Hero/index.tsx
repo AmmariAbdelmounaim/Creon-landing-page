@@ -1,5 +1,5 @@
 
-import { Dispatch, SetStateAction, useEffect, useState } from "react"
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 import NavbarHorizontal from "../Navbar/Horizontal"
 import NavbarVertical from "../Navbar/Vertical"
@@ -8,11 +8,28 @@ import BorderGradientText from "./BorderGradientText"
 export default function HeroSection({setIsLoaded}:{setIsLoaded:Dispatch<SetStateAction<boolean>>}) {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
   useEffect(() => {
-    const video = document.getElementById("landingVideo") as HTMLVideoElement
-      if(video.readyState === 4 ) {
-        setIsLoaded(true);
+    const video = videoRef.current;
+  
+    const handleLoadedData = () => {
+      setIsLoaded(true);
+    };
+  
+    if (video) {
+      if (video.readyState >= 2) { // 2 is HAVE_CURRENT_DATA
+        handleLoadedData();
+      } else {
+        video.addEventListener('loadeddata', handleLoadedData);
       }
+    }
+  
+    return () => {
+      if (video) {
+        video.removeEventListener('loadeddata', handleLoadedData);
+      }
+    };
   }, [setIsLoaded]);
 
   return (
@@ -31,12 +48,13 @@ export default function HeroSection({setIsLoaded}:{setIsLoaded:Dispatch<SetState
           <div className="from-4% via-47% absolute left-0 top-0 z-40 h-full w-full from-purple via-blue to-black to-80% mix-blend-soft-light bg-gradient-[175deg]" />
           {/* Video */}
           <video
+            ref={videoRef}
             id="landingVideo"
             className="absolute z-30 h-full w-full object-cover"
             muted
             loop
             autoPlay
-            preload="none"
+            preload="auto"
           >
             <source src="/videos/main-background-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
