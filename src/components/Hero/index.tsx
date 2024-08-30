@@ -9,15 +9,10 @@ export default function HeroSection({setIsLoaded}:{setIsLoaded:Dispatch<SetState
   const [isOpen, setIsOpen] = useState<boolean>(false)
   
   useEffect(() => {
-    const video = document.getElementById('landingVideo');
-
-    if (video) {
-      video.addEventListener("loadeddata", function() {
+    const video = document.getElementById("landingVideo") as HTMLVideoElement
+      if(video.readyState === 4 ) {
         setIsLoaded(true);
-      });
-    } else {
-      console.log("Video element not found");
-    }
+      }
   }, [setIsLoaded]);
 
   return (

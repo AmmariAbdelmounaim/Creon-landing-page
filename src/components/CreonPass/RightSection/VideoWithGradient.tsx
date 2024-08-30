@@ -3,14 +3,12 @@ import { Dispatch, SetStateAction, useEffect } from "react"
 
 export default function VideoWithGradient({setIsLoaded}:{setIsLoaded:Dispatch<SetStateAction<boolean>>}) {
   useEffect(() => {
-    const video = document.getElementById('videWithGradient');
-
-    if (video) {
-      video.onloadeddata = () => {
+    const video = document.getElementById("videWithGradient") as HTMLVideoElement
+      if(video.readyState === 4 ) {
         setIsLoaded(true);
-      };
-    }
+      }
   }, [setIsLoaded]);
+
 
   return (
     <div className="absolute right-0 top-0 size-[50.5rem] flex-1 ">

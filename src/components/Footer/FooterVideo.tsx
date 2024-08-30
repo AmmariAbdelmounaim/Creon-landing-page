@@ -2,14 +2,12 @@ import { useEffect } from "react";
 
 export default function FooterVideo({setIsLoaded}:{setIsLoaded:(v:boolean) => void}) {
   useEffect(() => {
-    const video = document.getElementById('footerVideo');
-
-    if (video) {
-      video.onloadeddata = () => {
+    const video = document.getElementById("footerVideo") as HTMLVideoElement
+      if(video.readyState === 4 ) {
         setIsLoaded(true);
-      };
-    }
+      }
   }, [setIsLoaded]);
+
 
   return (
     <div className="absolute bottom-0 left-0 h-[60.625rem] w-full ">
